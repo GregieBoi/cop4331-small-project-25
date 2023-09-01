@@ -58,6 +58,13 @@ function doLogin()
 
 }
 
+function doRegister()
+{
+
+	
+
+}
+
 function saveCookie()
 {
 	let minutes = 20;
