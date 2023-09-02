@@ -1,4 +1,4 @@
-const urlBase = 'http://COP4331-5.com/LAMPAPI';
+const urlBase = 'http://cop4331group25/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -55,6 +55,13 @@ function doLogin()
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
+
+}
+
+function doRegister()
+{
+
+	
 
 }
 
