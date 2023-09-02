@@ -60,9 +60,55 @@ function doLogin()
 
 function doRegister()
 {
+	userId = 0;
 
+	let firstName = document.getElementById("regFirst").value;
+	let lastName = document.getElementById("regLast").value;
 	
+	let login = document.getElementById("regName").value;
+	let password = document.getElementById("regPassword").value;
+//	var hash = md5( password );
+	
+	document.getElementById("registerResult").innerHTML = "";
 
+	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+//	var tmp = {login:login,password:hash};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Register.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{		
+					document.getElementById("registerResult").innerHTML = "Username is not available";
+					return;
+				}
+		
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+
+				saveCookie();
+	
+				window.location.href = "contact.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("registerResult").innerHTML = err.message;
+	}
 }
 
 function saveCookie()
@@ -120,7 +166,7 @@ function addContact()
 	let newContact = document.getElementById("contactText").value;
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	let tmp = {contact:newContact,userId,userId};
+	let tmp = {contact:newContact,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/AddContact.' + extension;

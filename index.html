@@ -10,14 +10,49 @@
 
 <h1 id="title">COP 4331 Group 25 Contact Manager</h1>
 
-<div id="loginDiv">
-	<span id="inner-title">PLEASE LOG IN OR REGISTER</span>
-	<input type="text" id="loginName" placeholder="Username" /><br />
-	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> LOG IN </button><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doRegister();"> REGISTER </button>
-	<span id="loginResult"></span>
+<div class="hero">
+	<div class="form-box">
+		<div class="btn-box">
+			<div id="btn"></div>
+			<button type="button" class="toggle-btn" onclick="logon()">Log In</button>
+			<button type="button" class="toggle-btn" onclick="register()">Register</button>
+		</div>
+		<form id="login" class="input-group">
+			<span id="loginResult"></span>
+			<input type="text" id="loginName" class="input-field" placeholder="Username" required>
+			<input type="password" id="loginPassword" class="input-field" placeholder="Password" required>
+			<input type="checkbox" class="chkbx"><span>Remember Me</span>
+			<button type="submit" class="submit-btn" onclick="doLogin()">Log In</button>
+		</form>
+		<form id="register" class="input-group">
+			<span id="registerResult"></span>
+			<input type="text" id="regFirst" class="input-field" placeholder="First Name" required>
+			<input type="text" id="regLast" class="input-field" placeholder="Last Name" required>
+			<input type="text" id="regName" class="input-field" placeholder="Username" required>
+			<input type="password" id="regPassword" class="input-field" placeholder="Password" required>
+			<input type="checkbox" class="chkbx"><span>Remember Me</span>
+			<button type="submit" class="submit-btn" onclick="doRegister()">Register</button>
+		</form>
+	</div>
 </div>
+
+<script>
+	var x = document.getElementById("login");
+	var y = document.getElementById("register");
+	var z = document.getElementById("btn");
+
+	function register(){
+		x.style.left = "-400px";
+		y.style.left = "50px";
+		z.style.left = "110px";
+	}
+	function logon(){
+		x.style.left = "50px";
+		y.style.left = "450px";
+		z.style.left = "0";
+	}
+	
+</script>
 
 </body>
 </html>
