@@ -163,7 +163,11 @@ function doLogout()
 
 function addContact()
 {
-	let newContact = document.getElementById("contactText").value;
+	let newContactFirst = document.getElementById("contactFirst").value;
+	let newContactLast  = document.getElementById("contactLast").value;
+	let newContactEmail = document.getElementById("contactEmail").value;
+	let newContactPhone = document.getElementById("contactPhone").value;
+	
 	document.getElementById("contactAddResult").innerHTML = "";
 
 	let tmp = {contact:newContact,userId:userId};
