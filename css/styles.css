@@ -44,7 +44,6 @@ body
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
-    border-radius: 30px;
 }
 
 .toggle-btn
@@ -65,7 +64,6 @@ body
     width: 110px;
     height: 100%;
     background: #0c9c81;
-    border-radius: 30px;
     transition: .5s;
 }
 
@@ -100,7 +98,6 @@ body
     background: #0c9c81;
     border: 0;
     outline: none;
-    border-radius: 30px;
 }
 
 .chkbx
@@ -137,26 +134,28 @@ span
 
 #loggedInDiv
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    font-size: 25px;
+    width: 50%;
+    margin-left: 25%;
     padding: 25px;
     background-color: #b2b2b2;
+    opacity: 80%
 }
 
 #accessUIDiv
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
+    text-align: center;
+    font-size: 25px;
+    width: 50%;
+    margin-left: 25%;
     padding: 25px;
     background-color: #b2b2b2;
+    opacity: 80%
 }
 
 .buttons
 {
-    font-size: 30px;
-    border-radius: 25px;
+    font-size: 25px;
     width: 50%;
     margin-left: 25%;
     font-family: 'Ubuntu', sans-serif;
@@ -177,10 +176,9 @@ span
 	font-size: 30px;
 }
 
-input[type="text"],input[type="password"]{
-    border-radius: 25px;
-    text-align: center;
-    width: 80%;
+input[type="text"],input[type="password"],input[type="tel"]{
+    text-align: left;
+    width: 50%;
     margin-left: 10%;
     margin-bottom: 2%;
     font-family: 'Ubuntu', sans-serif;
@@ -253,4 +251,22 @@ select{
     margin-bottom: 1%;
     font-family: 'Ubuntu', sans-serif;
     color: #95060a;
+}
+.formPopup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
+}
+.searchFormPopup{
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
 }
