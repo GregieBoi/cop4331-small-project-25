@@ -60,7 +60,7 @@ function doLogin()
 
 function doRegister()
 {
-	userId = 0;
+	userId = "";
 
 	let firstName = document.getElementById("regFirst").value;
 	let lastName = document.getElementById("regLast").value;
@@ -89,7 +89,7 @@ function doRegister()
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
 		
-				if( userId < 1 )
+				if( userId == "" )
 				{		
 					document.getElementById("registerResult").innerHTML = "Username is not available";
 					return;
@@ -199,7 +199,7 @@ function searchContact()
 	
 	let contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {userId:userId, search:srch};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchContacts.' + extension;
