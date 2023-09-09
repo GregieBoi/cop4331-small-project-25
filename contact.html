@@ -2,16 +2,16 @@
 <head>
 	<title>COP 4331 Group 25 Contact Manager</title>
 	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
+    <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	
+
 	<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() 
+	document.addEventListener('DOMContentLoaded', function()
 	{
 		readCookie();
 	}, false);
 	</script>
-	
+
 </head>
 <body>
 
@@ -23,18 +23,78 @@
 </div>
 
 <div id="accessUIDiv">
-	<br />
+	<h2>Add New Contact</h2>
+	<div class="openBtn">
+		<button class="openButton" onclick="openForm()"><strong>Add New Contact</strong></button>
+	</div>
 
-	<input type="text" id="searchText" placeholder="Contact To Search For"/>
-	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search Contact </button><br />
-	<span id="contactSearchResult"></span>
-	<p id="contactList">
-	</p><br /><br />
+	<div class="popup">
+		<div class="formPopup" id="popupForm">
+			<form action="/action_page.php" class="formContainer">
+				<h2>Enter Contact Information:</h2>
+				<label for="firstName">
+					<strong>First Name</strong>
+				</label>
+				<input type="text" id="firstNamePop" placeholder="Ex: John" name="firstNamePop" required>
+				</br>
+				<label for="lastName">
+					<strong>Last Name</strong>
+				</label>
+				<input type="text" id="lastNamePop" placeholder="Ex: Smith" name="lastName" required>
+				</br>
+				<label for="phoneNumber">
+					<strong>Phone Number</strong>
+				</label>
+				<input type="tel" id="phoneNumber" placeholder="(XXX)-XXX-XXXX" name="phoneNumber" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" required>
+				</br>
+				<label for="email">
+					<strong>E-mail Address</strong>
+				</label>
+				<input type="text" id="email" placeholder="Ex: jsmith@abc.efg" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+				</br>
+				<button type="submit" class="btn">Submit</button>
+				<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			</form>
+		</div>
+	</div>
 
-	<input type="text" id="contactText" placeholder="Contact To Add">
-	<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Add Contact </button><br />
-	<span id="contactAddResult"></span>
+	</br></br>
+
+
+	<h2>Search For Contact</h2>
+	<div class="openBtn">
+		<button class="openButton" onclick="openSearchForm()"><strong>Search</strong></button>
+	</div>
+
+	<div class="popup">
+		<div class="searchFormPopup" id="searchForm">
+			<form action="/action_page.php" class="formContainer">
+				<h2>Enter Contact Search Query:</h2>
+				<label for="searchInfo">
+					<strong>Search</strong>
+				</label>
+				<input type="text" id="searchQuery" name="searchQuery" required>
+				<button type="submit" class="btn">Submit</button>
+				<button type="button" class="btn cancel" onclick="closeSearchForm()">Close</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		function openForm() {
+			closeSearchForm();
+			document.getElementById("popupForm").style.display = "block";
+		}
+		function closeForm() {
+			document.getElementById("popupForm").style.display = "none";
+		}
+		function openSearchForm() {
+			closeForm();
+			document.getElementById("searchForm").style.display = "block";
+		}
+		function closeSearchForm() {
+			document.getElementById("searchForm").style.display = "none";
+		}
+	</script>
 </div>
-
 </body>
 </html>
