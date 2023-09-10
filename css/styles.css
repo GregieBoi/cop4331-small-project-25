@@ -9,7 +9,7 @@ body
 
 *
 {
-    font-family: sans-serif;
+    font-family: "Georgia", serif;
 }
 
 #title
@@ -17,24 +17,20 @@ body
     font-size: 40px;
     width: 100%;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
     color: #FFFFFF;
-}
-
-.hero
-{
-    height: 100%;
-    width: 100%;
+    margin-top: 5%;
 }
 
 .form-box
 {
-    width: 380px;
-    height: 480px;
+    width: 570px;
+    height: 720px;
     position: relative;
     margin: 6% auto;
     background: #FFFFFF;
     padding: 5px;
+    opacity: 80%;
     overflow: hidden;
 }
 
@@ -69,14 +65,16 @@ body
 
 .input-group
 {
-    top: 180px;
+    font-size: 25px;
+    top: 250px;
     position: absolute;
-    width: 280px;
+    width: 350px;
     transition: .5s;
 }
 
 .input-field
 {
+    font-size: 25px;
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -85,7 +83,14 @@ body
     border-top: 0;
     border-bottom: 1px solid #999;
     outline: none;
-    background: transparent;
+    background: #ffffff;
+    opacity: 100%;
+}
+
+/* fixes alignment of search bar so it's centered */
+#searchQuery
+{
+  margin-left: 0%;
 }
 
 .submit-btn
@@ -98,6 +103,12 @@ body
     background: #0c9c81;
     border: 0;
     outline: none;
+}
+
+/* changes sizes of submit buttons on contact page */
+#searchSubmit, #contactSubmit, #contactClose
+{
+  width: 20%;
 }
 
 .chkbx
@@ -113,14 +124,20 @@ span
     position: absolute;
 }
 
+/* Placement of sliding login<->register boxes on index page */
 #login
 {
-    left: 50px
+    left: 125px
 }
-
 #register
 {
-    left: 450px
+    left: 600px
+}
+
+/* Extends text boxes on index page */
+#loginName, #loginPassword, #regFirst, #regLast, #regName, #regPassword
+{
+  width: 80%;
 }
 
 #loginDiv
@@ -129,17 +146,19 @@ span
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: #ffffff;
+    opacity: 80%;
 }
 
 #loggedInDiv
 {
+    margin-top: 6%;
     font-size: 25px;
     width: 50%;
     margin-left: 25%;
     padding: 25px;
-    background-color: #b2b2b2;
-    opacity: 80%
+    background-color: #ffffff;
+    opacity: 80%;
 }
 
 #accessUIDiv
@@ -149,31 +168,8 @@ span
     width: 50%;
     margin-left: 25%;
     padding: 25px;
-    background-color: #b2b2b2;
-    opacity: 80%
-}
-
-.buttons
-{
-    font-size: 25px;
-    width: 50%;
-    margin-left: 25%;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
-    opacity: 50%;
-}
-
-#searchText
-{
-	font-size: 30px;
-}
-#contactText
-{
-	font-size: 30px;
+    background-color: #ffffff;
+    opacity: 80%;
 }
 
 input[type="text"],input[type="password"],input[type="tel"]{
@@ -181,7 +177,7 @@ input[type="text"],input[type="password"],input[type="tel"]{
     width: 50%;
     margin-left: 10%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 #inner-title{
@@ -191,7 +187,7 @@ input[type="text"],input[type="password"],input[type="tel"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
     color: #95060a;
 }
 
@@ -202,7 +198,7 @@ input[type="text"],input[type="password"],input[type="tel"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
     color: #95060a;
 }
 
@@ -213,7 +209,7 @@ input[type="text"],input[type="password"],input[type="tel"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
     color: #95060a;
 }
 
@@ -224,9 +220,20 @@ input[type="text"],input[type="password"],input[type="tel"]{
     text-align: center;
 }
 
-#logoutButton{
+#logoutButton, #openButton{
+    font-size: 25px;
     width: 20%;
-    margin-left: 40%;
+    margin-left: 20%;
+    background: #0c9c81;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 0;
+}
+
+.button:hover, .submit-btn:hover {
+    background-color: #0c9c81;
+    color: #0c9c81;
+    opacity: 50%;
 }
 
 select{
@@ -234,7 +241,7 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 #contactSearchResult{
@@ -249,24 +256,24 @@ select{
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Georgia', serif;
     color: #95060a;
 }
+
+/* to adjust the alignment of the contact info pop-up*/
+#contactFirst, #contactLast, #contactPhone, #contactEmail
+{
+}
+
+/* Add New Contact pop-up form */
 .formPopup {
   display: none;
   position: fixed;
-  left: 45%;
-  top: 5%;
+  width: 50%;
+  margin-left: 25%;
+  padding: 25px;
+  top: 58%;
   transform: translate(-50%, 5%);
-  border: 3px solid #999999;
   z-index: 9;
-}
-.searchFormPopup{
-  display: none;
-  position: fixed;
-  left: 45%;
-  top: 5%;
-  transform: translate(-50%, 5%);
-  border: 3px solid #999999;
-  z-index: 9;
+  background: #ffffff;
 }
