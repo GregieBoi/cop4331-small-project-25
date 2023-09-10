@@ -52,7 +52,7 @@
 					</label>
 					<input type="text" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="submit-btn" id="contactSubmit">Submit</button>
+					<button type="submit" class="submit-btn" id="contactSubmit" onclick="addContact()">Submit</button>
 					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</form>
 			</div>
@@ -61,7 +61,7 @@
 		<h2>Search For Contact</h2>
 			<form action="/action_page.php" class="formContainer">
 				<input type="text" id="searchQuery" name="searchQuery" class="input-field" required></br>
-				<button type="submit" class="submit-btn" id="searchSubmit">Submit</button>
+				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()">Submit</button>
 			</form>
 	</div>
 	<script>
