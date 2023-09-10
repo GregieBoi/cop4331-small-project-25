@@ -18,11 +18,12 @@
 	<h1 id="title">
 		<img src="images/cowboy.png" alt="Cowboy Contacts">
 	</h1>
+
 <div id="mainSection">
 	<div id="loggedInDiv">
 		<span id="userName"></span><br />
-		<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
-		<button class="openButton" onclick="openForm()"><strong>Add New Contact</strong></button>
+		<button type="button" id="logoutButton" class="button" onclick="doLogout();"> Log Out </button>
+		<button type="button" id="openButton" class="button" onclick="openForm()"> Add New Contact </button>
 	</div>
 
 	<div id="accessUIDiv">
@@ -44,27 +45,23 @@
 					<label for="phoneNumber">
 						<strong>Phone Number</strong>
 					</label>
-					<input type="tel" id="contactPhone" placeholder="(XXX)-XXX-XXXX" name="contactPhone" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" required>
+					<input type="tel" id="contactPhone" placeholder="(XXX)-XXX-XXXX" name="contactPhone" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" required>
 					</br>
 					<label for="email">
 						<strong>E-mail Address</strong>
 					</label>
 					<input type="text" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="btn">Submit</button>
-					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+					<button type="submit" class="submit-btn" id="contactSubmit">Submit</button>
+					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</form>
 			</div>
 		</div>
 
 		<h2>Search For Contact</h2>
 			<form action="/action_page.php" class="formContainer">
-				<label for="searchInfo">
-					<strong>Search</strong>
-				</label>
-				<input type="text" id="searchQuery" name="searchQuery" required>
-				<button type="submit" class="btn">Submit</button>
-				<button type="button" class="btn cancel" onclick="closeSearchForm()">Close</button>
+				<input type="text" id="searchQuery" name="searchQuery" class="input-field" required></br>
+				<button type="submit" class="submit-btn" id="searchSubmit">Submit</button>
 			</form>
 	</div>
 	<script>
