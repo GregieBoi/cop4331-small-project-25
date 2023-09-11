@@ -27,11 +27,16 @@
 	</div>
 
 	<div id="accessUIDiv">
+		<h2>Search For Contact</h2>
+			<form class="formContainer">
+				<input type="text" id="searchQuery" name="searchQuery" class="input-field" required></br>
+				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()">Submit</button>
+			</form>
 
 		<div class="popup">
 			<div class="formPopup" id="popupForm">
 				<form class="formContainer">
-					<h2>Enter Contact Information:</h2>
+					<h2>Enter New Contact Information</h2>
 					<label for="firstName">
 						<strong>First Name</strong>
 					</label>
@@ -58,11 +63,7 @@
 			</div>
 		</div>
 
-		<h2>Search For Contact</h2>
-			<form class="formContainer">
-				<input type="text" id="searchQuery" name="searchQuery" class="input-field" required></br>
-				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()">Submit</button>
-			</form>
+
 	</div>
 	<script>
 		function openForm() {
