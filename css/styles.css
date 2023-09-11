@@ -19,7 +19,7 @@ body
     text-align: center;
     font-family: 'Georgia', serif;
     color: #FFFFFF;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .form-box
@@ -268,12 +268,8 @@ select{
 /* Add New Contact pop-up form */
 .formPopup {
   display: none;
-  position: fixed;
-  width: 50%;
-  margin-left: 25%;
-  padding: 25px;
-  top: 58%;
-  transform: translate(-50%, 5%);
+  position: static;
+  padding: 25px;S
   z-index: 9;
   background: #ffffff;
 }
