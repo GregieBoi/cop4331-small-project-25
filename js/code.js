@@ -113,14 +113,27 @@ function doRegister()
 
 function saveCookie()
 {
+	/*
 	let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	*/
+
+	var cook = {};
+	cook.firstName = document.getElementById("firstname").value;
+	cook.lastname = document.getElementById("lastname").value;
+	cook.userId = document.getElementById("userId").value;
+ 
+	var jsonString = JSON.stringify(cook);
+ 
+	document.cookie = jsonString;
+
 }
 
 function readCookie()
 {
+	/*
 	userId = -1;
 	let data = document.cookie;
 	let splits = data.split(",");
@@ -150,6 +163,20 @@ function readCookie()
 	{
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
+	*/
+
+	if( document.cookie.length!=0)
+	{
+ 
+	var cook = JSON.parse(document.cookie);
+ 
+    	alert("firstName="+cook.firstName+" "+"lastName="+cook.lastName+" "+"userId="+cook.userId);
+	}
+	else
+	{
+    	alert("Cookie not available");
+	}
+
 }
 
 function doLogout()
