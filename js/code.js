@@ -120,14 +120,9 @@ function saveCookie()
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 	*/
 
-	var cook = {};
-	cook.firstName = firstName;
-	cook.lastname = lastName;
-	cook.userId = userId;
- 
-	var jsonString = JSON.stringify(cook);
- 
-	document.cookie = jsonString;
+	document.cookie = "firstName=" + firstName;
+	document.cookie = "lastName=" + lastName;
+	document.cookie = "userId=" + userId;
 
 }
 
