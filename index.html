@@ -3,12 +3,14 @@
 	<title>COP 4331 Group 25 Contact Manager</title>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
+    <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
 
-<h1 id="title">COP 4331 Group 25 Contact Manager</h1>
+	<h1 id="title">
+	<img src="images/cowboy.png" alt="Cowboy Contacts">
+	</h1>
 
 <div class="hero">
 	<div class="form-box">
@@ -17,22 +19,20 @@
 			<button type="button" class="toggle-btn" onclick="logon()">Log In</button>
 			<button type="button" class="toggle-btn" onclick="register()">Register</button>
 		</div>
-		<form id="login" class="input-group">
+		<div id="login" class="input-group">
 			<span id="loginResult"></span>
-			<input type="text" id="loginName" class="input-field" placeholder="Username" required>
+			<input type="text" id="loginName" class="input-field" placeholder="Username" size="30" required>
 			<input type="password" id="loginPassword" class="input-field" placeholder="Password" required>
-			<input type="checkbox" class="chkbx"><span>Remember Me</span>
 			<button type="submit" class="submit-btn" onclick="doLogin()">Log In</button>
-		</form>
-		<form id="register" class="input-group">
+		</div>
+		<div id="register" class="input-group">
 			<span id="registerResult"></span>
 			<input type="text" id="regFirst" class="input-field" placeholder="First Name" required>
 			<input type="text" id="regLast" class="input-field" placeholder="Last Name" required>
 			<input type="text" id="regName" class="input-field" placeholder="Username" required>
 			<input type="password" id="regPassword" class="input-field" placeholder="Password" required>
-			<input type="checkbox" class="chkbx"><span>Remember Me</span>
 			<button type="submit" class="submit-btn" onclick="doRegister()">Register</button>
-		</form>
+		</div>
 	</div>
 </div>
 
@@ -42,16 +42,18 @@
 	var z = document.getElementById("btn");
 
 	function register(){
-		x.style.left = "-400px";
-		y.style.left = "50px";
+		x.style.left = "-590px";
+		y.style.left = "100px";
 		z.style.left = "110px";
 	}
 	function logon(){
-		x.style.left = "50px";
-		y.style.left = "450px";
+		x.style.left = "100px";
+		y.style.left = "590px";
 		z.style.left = "0";
 	}
-	
+
+
+
 </script>
 
 </body>
