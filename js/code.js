@@ -1,4 +1,4 @@
-const urlBase = 'http://cop4331group25/LAMPAPI';
+const urlBase = 'http://cop4331group25.com/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -60,7 +60,7 @@ function doLogin()
 
 function doRegister()
 {
-	userId = 0;
+	userId = "";
 
 	let firstName = document.getElementById("regFirst").value;
 	let lastName = document.getElementById("regLast").value;
@@ -89,7 +89,7 @@ function doRegister()
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
 		
-				if( userId < 1 )
+				if( userId == "" )
 				{		
 					document.getElementById("registerResult").innerHTML = "Username is not available";
 					return;
@@ -113,14 +113,27 @@ function doRegister()
 
 function saveCookie()
 {
+	/*
 	let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	*/
+
+	var cook = {};
+	cook.firstName = document.getElementById("firstname").value;
+	cook.lastname = document.getElementById("lastname").value;
+	cook.userId = document.getElementById("userId").value;
+ 
+	var jsonString = JSON.stringify(cook);
+ 
+	document.cookie = jsonString;
+
 }
 
 function readCookie()
 {
+	/*
 	userId = -1;
 	let data = document.cookie;
 	let splits = data.split(",");
@@ -150,6 +163,20 @@ function readCookie()
 	{
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
+	*/
+
+	if( document.cookie.length!=0)
+	{
+ 
+	var cook = JSON.parse(document.cookie);
+ 
+    	alert("firstName="+cook.firstName+" "+"lastName="+cook.lastName+" "+"userId="+cook.userId);
+	}
+	else
+	{
+    	alert("Cookie not available");
+	}
+
 }
 
 function doLogout()
@@ -163,13 +190,17 @@ function doLogout()
 
 function addContact()
 {
-	let newContact = document.getElementById("contactText").value;
+	let newContactFirst = document.getElementById("contactFirst").value;
+	let newContactLast  = document.getElementById("contactLast").value;
+	let newContactEmail = document.getElementById("contactEmail").value;
+	let newContactPhone = document.getElementById("contactPhone").value;
+	
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	let tmp = {contact:newContact,userId:userId};
+	let tmp = {firstName:newContactFirst,lastName:newContactLast,phone:newContactPhone,email:newContactEmail,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddContact.' + extension;
+	let url = urlBase + '/AddContacts.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -199,7 +230,7 @@ function searchContact()
 	
 	let contactList = "";
 
-	let tmp = {search:srch,userId:userId};
+	let tmp = {userId:userId, search:srch};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchContacts.' + extension;
