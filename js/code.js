@@ -128,10 +128,9 @@ function saveCookie()
 
 function readCookie()
 {
-	/*
 	userId = -1;
 	let data = document.cookie;
-	let splits = data.split(",");
+	let splits = data.split(";");
 	for(var i = 0; i < splits.length; i++) 
 	{
 		let thisOne = splits[i].trim();
@@ -157,19 +156,6 @@ function readCookie()
 	else
 	{
 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
-	}
-	*/
-
-	if( document.cookie.length!=0)
-	{
- 
-	var cook = JSON.parse(document.cookie);
- 
-    	alert("firstName="+cook.firstName+" "+"lastName="+cook.lastName+" "+"userId="+cook.userId);
-	}
-	else
-	{
-    	alert("Cookie not available");
 	}
 
 }
