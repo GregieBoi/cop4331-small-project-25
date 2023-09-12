@@ -121,9 +121,9 @@ function saveCookie()
 	*/
 
 	var cook = {};
-	cook.firstName = document.getElementById("firstName").value;
-	cook.lastname = document.getElementById("lastName").value;
-	cook.userId = document.getElementById("userId").value;
+	cook.firstName = firstName;
+	cook.lastname = lastName;
+	cook.userId = userId;
  
 	var jsonString = JSON.stringify(cook);
  
