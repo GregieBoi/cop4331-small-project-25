@@ -33,30 +33,27 @@
 				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()">Submit</button>
 			</div>
 		<span id="contactSearchResult"></span>
-		<p id="contactList">
-			
-		</p>
-		<div class="popup">
+		<span id="searchResultTable"></span>
 			<div class="formPopup" id="popupForm">
 				<div class="formContainer">
 					<h2>Enter New Contact Information</h2>
 					<span id="contactAddResult"></span>
-					<label for="firstName">
+					<label for="contactFirst">
 						<strong>First Name</strong>
 					</label>
 					<input type="text" id="contactFirst" placeholder="Ex: John" name="contactFirst" required>
 					</br>
-					<label for="lastName">
+					<label for="contactLast">
 						<strong>Last Name</strong>
 					</label>
 					<input type="text" id="contactLast" placeholder="Ex: Smith" name="contactLast" required>
 					</br>
-					<label for="phoneNumber">
+					<label for="contactPhone">
 						<strong>Phone Number</strong>
 					</label>
 					<input type="text" id="contactPhone" placeholder="(XXX)-XXX-XXXX" name="contactPhone" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" required>
 					</br>
-					<label for="email">
+					<label for="contactEmail">
 						<strong>E-mail Address</strong>
 					</label>
 					<input type="text" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
@@ -65,7 +62,6 @@
 					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</div>
 			</div>
-		</div>
 
 
 	</div>
