@@ -209,8 +209,6 @@ function searchContact()
 	let srch = document.getElementById("searchQuery").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 
-	let contactList = "";
-
 	let tmp = {userId:userId, search:srch};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -252,6 +250,10 @@ function searchContact()
 
 				 // Loop through the JSON data and create table rows
           contacts.forEach((item) => {
+						const editButton = document.createElement('button');
+		 				const deleteButton = document.createElement('button');
+		 				editButton.innerText = "Edit";
+		 				deleteButton.innerText = "Delete";
             let tr = document.createElement("tr");
 
             // Get the values of the current object in the JSON data
@@ -262,7 +264,10 @@ function searchContact()
                let td = document.createElement("td");
                td.innerText = elem; // Set the value as the text of the table cell
                tr.appendChild(td); // Append the table cell to the table row
+
             });
+						tr.appendChild(editButton);
+						tr.appendChild(deleteButton);
             table.appendChild(tr); // Append the table row to the table
          });
          searchResultTable.appendChild(table) // Append the table to the container element
