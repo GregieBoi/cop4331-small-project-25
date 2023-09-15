@@ -256,7 +256,7 @@ function searchContact()
 					 editButton.setAttribute("id", "" + item.contactId + "");
 					 deleteButton.innerText = "Delete";
 					 deleteButton.setAttribute("id", "" + item.contactId + "");
-					 deleteButton.setAttribute("onclick", "" + deleteContact(item.contactId) + "");
+					 deleteButton.onclick = function(){deleteContact(item.contactId)};
 					 let tr = document.createElement("tr");
 
 					 // Get the values of the current object in the JSON data
