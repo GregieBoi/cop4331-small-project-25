@@ -281,3 +281,66 @@ function searchContact()
 	}
 
 }
+
+function deleteContact(contactId) 
+{
+
+	let tmp = {contactId:contactId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/DeleteContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactDeleteResult").innerHTML = err.message;
+	}
+
+}
+
+function editContact(contactId)
+{
+
+	let editFirst = document.getElementById("editFirst");
+	let editLast  = document.getElementById("editLast");
+	let editPhone = document.getElementById("editPhone");
+	let editEmail = document.getElementById("editEmail");
+
+	let tmp = {userId:userId,contactId:contactId,firstName:editFirst,lastName:editLast,phone:editPhone,email:editEmail};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/EditContacts.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				document.getElementById("contactEditResult").innerHTML = "Contact has been updated";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactEditResult").innerHTML = err.message;
+	}
+
+}
