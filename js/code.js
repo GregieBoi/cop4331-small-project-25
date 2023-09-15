@@ -206,6 +206,13 @@ function addContact()
 
 function searchContact()
 {
+
+	var Parent = document.getElementById("searchResultTable");
+	while(Parent.hasChildNodes())
+	{
+	   Parent.removeChild(Parent.firstChild);
+	}
+
 	let srch = document.getElementById("searchQuery").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 
