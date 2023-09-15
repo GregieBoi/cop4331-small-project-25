@@ -250,20 +250,29 @@ function searchContact()
 
 				 // Loop through the JSON data and create table rows
           contacts.forEach((item) => {
-						const editButton = document.createElement('button');
-		 				const deleteButton = document.createElement('button');
-		 				editButton.innerText = "Edit";
-		 				deleteButton.innerText = "Delete";
-            let tr = document.createElement("tr");
+						contacts.forEach((item) => {
+							const editButton = document.createElement('button');
+			 				const deleteButton = document.createElement('button');
+			 				editButton.innerText = "Edit";
+							editButton.setAttribute("id", "" + item.contactId + "");
+			 				deleteButton.innerText = "Delete";
+							deleteButton.setAttribute("id", "" + item.contactId + "");
+	            let tr = document.createElement("tr");
 
-            // Get the values of the current object in the JSON data
-            let vals = Object.values(item);
+	            // Get the values of the current object in the JSON data
+	            let vals = Object.values(item);
 
-            // Loop through the values and create table cells
-            vals.forEach((elem) => {
-               let td = document.createElement("td");
-               td.innerText = elem; // Set the value as the text of the table cell
-               tr.appendChild(td); // Append the table cell to the table row
+	            // Loop through the values and create table cells
+	            vals.forEach((elem) => {
+	               let td = document.createElement("td");
+	               td.innerText = elem; // Set the value as the text of the table cell
+	               tr.appendChild(td); // Append the table cell to the table row
+	            });
+							
+							tr.appendChild(editButton);
+							tr.appendChild(deleteButton);
+	            table.appendChild(tr); // Append the table row to the table
+	         });
 
             });
 						tr.appendChild(editButton);
@@ -282,7 +291,7 @@ function searchContact()
 
 }
 
-function deleteContact(contactId) 
+function deleteContact(contactId)
 {
 
 	let tmp = {contactId:contactId};
