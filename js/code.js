@@ -206,7 +206,7 @@ function addContact()
 
 function searchContact()
 {
-	let srch = document.getElementById("searchText").value;
+	let srch = document.getElementById("searchQuery").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
 	let contactList = "";
