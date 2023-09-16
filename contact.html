@@ -62,6 +62,34 @@
 					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</div>
 			</div>
+			<div class="formPopup" id="popupFormEdit">
+				<div class="formContainer">
+					<h2>Edit Existing Contact Information</h2>
+					<span id="contactEditResult"></span>
+					<label for="contactEditFirst">
+						<strong>First Name</strong>
+					</label>
+					<input type="text" id="contactEditFirst" placeholder="Ex: John" required>
+					</br>
+					<label for="contactEditLast">
+						<strong>Last Name</strong>
+					</label>
+					<input type="text" id="contactEditLast" placeholder="Ex: Smith" required>
+					</br>
+					<label for="contactEditPhone">
+						<strong>Phone Number</strong>
+					</label>
+					<input type="text" id="contactEditPhone" placeholder="(XXX)-XXX-XXXX" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" required>
+					</br>
+					<label for="contactEditEmail">
+						<strong>E-mail Address</strong>
+					</label>
+					<input type="text" id="contactEditEmail" placeholder="Ex: jsmith@abc.efg" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+					</br>
+					<button type="submit" class="submit-btn" id="contactEditSubmit" onclick="editContact()">Submit</button>
+					<button type="button" class="submit-btn" id="contactEditClose" onclick="closeForm()">Close</button>
+				</div>
+			</div>
 
 
 	</div>

@@ -261,6 +261,7 @@ function searchContact()
 					 const deleteButton = document.createElement('button');
 					 editButton.innerText = "Edit";
 					 editButton.setAttribute("id", "" + item.contactId + "");
+					 editButton.onclick = function(){openEdit(item.contactId, item.firstName, item.lastName, item.phone, item.email)};
 					 deleteButton.innerText = "Delete";
 					 deleteButton.setAttribute("id", "" + item.contactId + "");
 					 deleteButton.onclick = function(){deleteContact(item.contactId)};
@@ -321,13 +322,28 @@ function deleteContact(contactId)
 
 }
 
-function editContact(contactId)
+function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 {
 
-	let editFirst = document.getElementById("editFirst");
-	let editLast  = document.getElementById("editLast");
-	let editPhone = document.getElementById("editPhone");
-	let editEmail = document.getElementById("editEmail");
+	popup = document.getElementById("popupFormEdit");
+	popup.setAttribute("name", contactId);
+	
+	document.getElementById("contactEditFirst").setAttribute("value", ogFirst);
+	document.getElementById("contactEditLast").setAttribute("value", ogLast);
+	document.getElementById("contactEditPhone").setAttribute("value", ogPhone);
+	document.getElementById("contactEditEmail").setAttribute("value", ogEmail);
+
+	popup.style = "block";
+
+}
+
+function editContact()
+{
+
+	let editFirst = document.getElementById("contactEditFirst");
+	let editLast  = document.getElementById("contactEditLast");
+	let editPhone = document.getElementById("contactEditPhone");
+	let editEmail = document.getElementById("contactEditEmail");
 
 	let tmp = {userId:userId,contactId:contactId,firstName:editFirst,lastName:editLast,phone:editPhone,email:editEmail};
 	let jsonPayload = JSON.stringify(tmp);
