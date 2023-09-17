@@ -326,8 +326,8 @@ function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 {
 
 	popup = document.getElementById("popupFormEdit");
-	popup.setAttribute("name", contactId);
 	
+	document.getElementById("contactEditFirst").setAttribute("name", contactId);
 	document.getElementById("contactEditFirst").setAttribute("value", ogFirst);
 	document.getElementById("contactEditLast").setAttribute("value", ogLast);
 	document.getElementById("contactEditPhone").setAttribute("value", ogPhone);
@@ -340,6 +340,7 @@ function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 function editContact()
 {
 
+	let contactId = document.getElementById("contactEditFirst").name;
 	let editFirst = document.getElementById("contactEditFirst");
 	let editLast  = document.getElementById("contactEditLast");
 	let editPhone = document.getElementById("contactEditPhone");
