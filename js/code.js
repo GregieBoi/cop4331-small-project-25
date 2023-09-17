@@ -341,10 +341,10 @@ function editContact()
 {
 
 	let contactId = document.getElementById("contactEditFirst").name;
-	let editFirst = document.getElementById("contactEditFirst");
-	let editLast  = document.getElementById("contactEditLast");
-	let editPhone = document.getElementById("contactEditPhone");
-	let editEmail = document.getElementById("contactEditEmail");
+	let editFirst = document.getElementById("contactEditFirst").value;
+	let editLast  = document.getElementById("contactEditLast").value;
+	let editPhone = document.getElementById("contactEditPhone").value;
+	let editEmail = document.getElementById("contactEditEmail").value;
 
 	let tmp = {userId:userId,contactId:contactId,firstName:editFirst,lastName:editLast,phone:editPhone,email:editEmail};
 	let jsonPayload = JSON.stringify(tmp);
