@@ -105,24 +105,21 @@ body
     outline: none;
 }
 
-/* changes sizes of submit buttons on contact page */
-#searchSubmit, #contactSubmit, #contactClose
-{
-  width: 20%;
-}
-
-.chkbx
-{
-    margin: 30px 10px 30px 0;
-}
-
-span
+.userName
 {
     color: #777;
     font-size: 12px;
     bottom: 68px;
     position: absolute;
 }
+
+
+/* changes sizes of submit buttons on contact page */
+#searchSubmit, #contactSubmit, #contactClose
+{
+  width: 20%;
+}
+
 
 /* Placement of sliding login<->register boxes on index page */
 #login
@@ -172,7 +169,7 @@ span
     opacity: 80%;
 }
 
-input[type="text"],input[type="password"],input[type="tel"]{
+input[type="text"],input[type="password"],{
     text-align: left;
     width: 50%;
     margin-left: 10%;
@@ -213,12 +210,13 @@ input[type="text"],input[type="password"],input[type="tel"]{
     color: #95060a;
 }
 
-#userName{
+/* fix me -- move off main section*/
+/*#userName{
     display: inline-block;
     width: 80%;
     margin-left: 10%;
     text-align: center;
-}
+}*/
 
 #logoutButton, #openButton{
     font-size: 25px;
@@ -245,6 +243,13 @@ select{
 }
 
 #contactSearchResult{
+}
+
+#searchResultTable{
+  position: relative;
+  display: inline-block;
+}
+#searchResultTable tr td:nth-child(1), #searchResultTable th:nth-child(1) {
     display: none;
 }
 
@@ -269,7 +274,7 @@ select{
 .formPopup {
   display: none;
   position: static;
-  padding: 25px;S
+  padding: 25px;
   z-index: 9;
   background: #ffffff;
 }
