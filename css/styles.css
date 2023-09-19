@@ -249,6 +249,7 @@ select{
   position: relative;
   display: inline-block;
 }
+
 #searchResultTable tr td:nth-child(1), #searchResultTable th:nth-child(1) {
     display: none;
 }
@@ -268,6 +269,12 @@ select{
 /* to adjust the alignment of the contact info pop-up*/
 #contactFirst, #contactLast, #contactPhone, #contactEmail
 {
+
+}
+
+#searchSection{
+    height: 600px;
+    overflow: scroll;
 }
 
 /* Add New Contact pop-up form */
