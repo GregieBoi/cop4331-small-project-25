@@ -4,7 +4,6 @@
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function()
 	{
@@ -14,11 +13,6 @@
 
 </head>
 <body>
-
-	<h1 id="title">
-		<img src="images/cowboy.png" alt="Cowboy Contacts">
-	</h1>
-
 <div id="mainSection">
 	<div id="loggedInDiv">
 		<span id="userName"></span><br />
@@ -32,8 +26,10 @@
 				<input type="text" id="searchQuery" name="searchQuery" class="input-field" required></br>
 				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()">Submit</button>
 			</div>
-		<span id="contactSearchResult"></span>
+		<div id="resultSection">
+		<span id="contactSearchResult"></span></br>
 		<span id="searchResultTable"></span>
+		</div>
 			<div class="formPopup" id="popupForm">
 				<div class="formContainer">
 					<h2>Enter New Contact Information</h2>
