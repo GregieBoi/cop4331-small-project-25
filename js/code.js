@@ -270,7 +270,7 @@ function searchContact()
 					 deleteButton.setAttribute("title", "Delete");
 					 deleteButton.setAttribute("class", "deleteContactBtn");
 					 deleteButton.innerHTML = '<i id="icon" class="fa-solid fa-trash"></i>';
-					 deleteButton.onclick = function(){deleteContact(item.contactId)};
+					 deleteButton.onclick = function(){deleteContact(item.contactId), deleteButton.closest("tr").remove();};
 					 
 					 let tr = document.createElement("tr");
 
