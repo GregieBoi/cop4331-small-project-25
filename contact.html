@@ -18,7 +18,7 @@
 <div id="mainSection">
 	<div id="loggedInDiv">
 		<span id="userName"></span><br />
-		<button type="button" id="logoutButton" class="button" onclick="doLogout();"> Log Out </button>
+		<button type="button" id="logoutButton" class="button" onsubmit="doLogout();"> Log Out </button>
 		<button type="button" id="openButton" class="button" onclick="openForm()"> Add New Contact </button>
 	</div>
 
@@ -56,7 +56,7 @@
 					</label>
 					<input type="text" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="submit-btn" id="contactSubmit" onclick="addContact()">Submit</button>
+					<button type="submit" class="submit-btn" id="contactSubmit" onsubmit="addContact()">Submit</button>
 					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</form>
 			</div>
@@ -84,7 +84,7 @@
 					</label>
 					<input type="text" id="contactEditEmail" placeholder="Ex: jsmith@abc.efg" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="submit-btn" id="contactEditSubmit" onclick="editContact()">Submit</button>
+					<button type="submit" class="submit-btn" id="contactEditSubmit" onsubmit="editContact()">Submit</button>
 					<button type="button" class="submit-btn" id="contactEditClose" onclick="closeEditForm()">Close</button>
 				</div>
 			</div>
