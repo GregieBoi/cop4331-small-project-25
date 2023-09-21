@@ -155,7 +155,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName").innerHTML = "Howdy, " + firstName + " " + lastName + "!";
 	}
 
 }
@@ -259,12 +259,19 @@ function searchContact()
 				 contacts.forEach((item) => {
 					 const editButton = document.createElement('button');
 					 const deleteButton = document.createElement('button');
-					 editButton.innerText = "Edit";
+
 					 editButton.setAttribute("id", "" + item.contactId + "");
+					 editButton.setAttribute("class", "editContactBtn");
+					 editButton.setAttribute("title", "Edit");
+					 editButton.innerHTML = '<i id ="icon" class="fa-solid fa-pen-to-square"></i>';
 					 editButton.onclick = function(){openEdit(item.contactId, item.firstName, item.lastName, item.phone, item.email)};
-					 deleteButton.innerText = "Delete";
+
 					 deleteButton.setAttribute("id", "" + item.contactId + "");
+					 deleteButton.setAttribute("title", "Delete");
+					 deleteButton.setAttribute("class", "deleteContactBtn");
+					 deleteButton.innerHTML = '<i id="icon" class="fa-solid fa-trash"></i>';
 					 deleteButton.onclick = function(){deleteContact(item.contactId)};
+					 
 					 let tr = document.createElement("tr");
 
 					 // Get the values of the current object in the JSON data
@@ -333,7 +340,7 @@ function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 	document.getElementById("contactEditPhone").setAttribute("value", ogPhone);
 	document.getElementById("contactEditEmail").setAttribute("value", ogEmail);
 
-	popup.style = "block";
+	popup.style = "display:block";
 
 }
 
