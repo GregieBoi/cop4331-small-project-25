@@ -93,6 +93,19 @@ body
   margin-left: 0%;
 }
 
+.contactBtn{
+    cursor: pointer;
+    background:none;
+    border:0;
+    outline:none;
+}
+
+.contactBtn:hover, #icon:hover{
+    color:#0c9c81;
+}
+
+
+
 .submit-btn
 {
     width: 85%;
@@ -105,14 +118,11 @@ body
     outline: none;
 }
 
-.userName
+#userName
 {
-    color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
+    color: #000;
+    font-size: 25px;
 }
-
 
 /* changes sizes of submit buttons on contact page */
 #searchSubmit, #contactSubmit, #contactClose
@@ -210,27 +220,18 @@ input[type="text"],input[type="password"],{
     color: #95060a;
 }
 
-/* fix me -- move off main section*/
-/*#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}*/
-
 #logoutButton, #openButton{
     font-size: 25px;
     width: 20%;
-    margin-left: 20%;
     background: #0c9c81;
     padding-bottom: 5px;
     padding-top: 5px;
     border: 0;
 }
 
-.button:hover, .submit-btn:hover {
+.button:hover, .submit-btn:hover{
     background-color: #0c9c81;
-    color: #0c9c81;
+    color: #ffffff;
     opacity: 50%;
 }
 
@@ -266,11 +267,6 @@ select{
     color: #95060a;
 }
 
-/* to adjust the alignment of the contact info pop-up*/
-#contactFirst, #contactLast, #contactPhone, #contactEmail
-{
-
-}
 
 #searchSection{
     height: 600px;
