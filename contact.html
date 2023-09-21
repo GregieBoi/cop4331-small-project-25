@@ -2,9 +2,8 @@
 <head>
 	<title>Cowboy Contacts</title>
 	<script type="text/javascript" src="js/code.js" ></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <link href="css/styles.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link href="css/styles.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/5a040cc62f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function()
@@ -15,11 +14,30 @@
 
 </head>
 <body>
+	<div class="pos-f-t">
+		<div class="collapse" id="navbarToggleExternalContent">
+		  <div class="bg-light p-4">
+			<h4 class="text-black">Collapsed content</h4>
+			<span class="text-muted">Toggleable via the navbar brand.</span>
+		  </div>
+		</div>
+		<nav class="navbar navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<span style="font-size: 25px"><img src="images/cowboy.png" alt="Cowboy Contacts" style="height: 1.5em"></span>
+			<p></p>
+			<p></p>
+			<p></p>
+			<span id="userName"></span>
+			<button type="button" id="logoutButton" class="button" onclick="doLogout();" style="display:inline"> Log Out </button>
+		</nav>
+	  </div>
 <div id="mainSection">
 	<div id="loggedInDiv">
-		<span id="userName"></span><br />
-		<button type="button" id="logoutButton" class="button" onsubmit="doLogout();"> Log Out </button>
-		<button type="button" id="openButton" class="button" onclick="openForm()"> Add New Contact </button>
+		<span id="userName"></span>
+		<button type="button" id="logoutButton" class="button" onclick="doLogout();" style="margin-left: 20%"> Log Out </button>
+		<button type="button" id="openButton" class="button" onclick="openForm()"  style="margin-left: 20%"> Add New Contact </button>
 	</div>
 
 	<div id="accessUIDiv">
@@ -30,6 +48,7 @@
 			</div>
 		<div id="resultSection">
 		<span id="contactSearchResult"></span></br>
+		<span id="contactDeleteResult"></span></br>
 		<span id="searchResultTable"></span>
 		</div>
 			<div class="formPopup" id="popupForm">
@@ -56,11 +75,11 @@
 					</label>
 					<input type="text" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="submit-btn" id="contactSubmit" onsubmit="addContact()">Submit</button>
+					<button type="submit" class="submit-btn" id="contactSubmit" onInvalid="invalid()" onsubmit="addContact()">Submit</button>
 					<button type="button" class="submit-btn" id="contactClose" onclick="closeForm()">Close</button>
 				</form>
 			</div>
-			<div class="formPopup" id="popupFormEdit">
+			<div class="formPopup" id="popupFormEdit" style="display:none">
 				<div class="formContainer">
 					<h2>Edit Existing Contact Information</h2>
 					<span id="contactEditResult"></span></br>
@@ -84,7 +103,7 @@
 					</label>
 					<input type="text" id="contactEditEmail" placeholder="Ex: jsmith@abc.efg" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 					</br>
-					<button type="submit" class="submit-btn" id="contactEditSubmit" onsubmit="editContact()">Submit</button>
+					<button type="submit" class="submit-btn" id="contactEditSubmit" onclick="editContact()">Submit</button>
 					<button type="button" class="submit-btn" id="contactEditClose" onclick="closeEditForm()">Close</button>
 				</div>
 			</div>
@@ -100,6 +119,9 @@
 		}
 		function closeEditForm() {
 			document.getElementById("popupFormEdit").style.display = "none";
+		}
+		function invalid(){
+			document.getElementById("contactAddResult").innerHTML = "Invalid Entry";
 		}
 	</script>
 </div>
