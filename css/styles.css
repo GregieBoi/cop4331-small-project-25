@@ -5,6 +5,7 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden;
 }
 
 *
@@ -104,8 +105,6 @@ body
     color:#0c9c81;
 }
 
-
-
 .submit-btn
 {
     width: 85%;
@@ -157,23 +156,14 @@ body
     opacity: 80%;
 }
 
-#loggedInDiv
-{
-    margin-top: 6%;
-    font-size: 25px;
-    width: 50%;
-    margin-left: 25%;
-    padding: 25px;
-    background-color: #ffffff;
-    opacity: 80%;
-}
-
 #accessUIDiv
 {
+    margin-top: 6%;
     text-align: center;
     font-size: 25px;
-    width: 50%;
-    margin-left: 25%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
     padding: 25px;
     background-color: #ffffff;
     opacity: 80%;
@@ -249,6 +239,7 @@ select{
 #searchResultTable{
   position: relative;
   display: inline-block;
+  font-size: 16px;
 }
 
 #searchResultTable tr td:nth-child(1), #searchResultTable th:nth-child(1) {
@@ -267,10 +258,10 @@ select{
     color: #95060a;
 }
 
-
 #searchSection{
-    height: 600px;
+    height: 50%;
     overflow: scroll;
+    overflow-x:hidden;
 }
 
 /* Add New Contact pop-up form */
@@ -278,6 +269,5 @@ select{
   display: none;
   position: static;
   padding: 25px;
-  z-index: 9;
   background: #ffffff;
 }
