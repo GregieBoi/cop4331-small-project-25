@@ -261,14 +261,14 @@ function searchContact()
 					 const deleteButton = document.createElement('button');
 
 					 editButton.setAttribute("id", "" + item.contactId + "");
-					 editButton.setAttribute("class", "editContactBtn");
+					 editButton.setAttribute("class", "contactBtn");
 					 editButton.setAttribute("title", "Edit");
 					 editButton.innerHTML = '<i id ="icon" class="fa-solid fa-pen-to-square"></i>';
 					 editButton.onclick = function(){openEdit(item.contactId, item.firstName, item.lastName, item.phone, item.email)};
 
 					 deleteButton.setAttribute("id", "" + item.contactId + "");
 					 deleteButton.setAttribute("title", "Delete");
-					 deleteButton.setAttribute("class", "deleteContactBtn");
+					 deleteButton.setAttribute("class", "contactBtn");
 					 deleteButton.innerHTML = '<i id="icon" class="fa-solid fa-trash"></i>';
 					 deleteButton.onclick = function(){deleteContact(item.contactId), deleteButton.closest("tr").remove();};
 					 
@@ -289,6 +289,7 @@ function searchContact()
 					 table.appendChild(tr); // Append the table row to the table
 				});
          searchResultTable.appendChild(table) // Append the table to the container element
+		 document.getElementById("wanted").style = "display:inline";
 			}
 		};
 		xhr.send(jsonPayload);
