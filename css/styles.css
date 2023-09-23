@@ -5,6 +5,7 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden;
 }
 
 *
@@ -93,6 +94,17 @@ body
   margin-left: 0%;
 }
 
+.contactBtn{
+    cursor: pointer;
+    background:none;
+    border:0;
+    outline:none;
+}
+
+.contactBtn:hover, #icon:hover{
+    color:#0c9c81;
+}
+
 .submit-btn
 {
     width: 85%;
@@ -105,14 +117,11 @@ body
     outline: none;
 }
 
-.userName
+#userName
 {
-    color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
+    color: #000;
+    font-size: 25px;
 }
-
 
 /* changes sizes of submit buttons on contact page */
 #searchSubmit, #contactSubmit, #contactClose
@@ -147,23 +156,14 @@ body
     opacity: 80%;
 }
 
-#loggedInDiv
-{
-    margin-top: 6%;
-    font-size: 25px;
-    width: 50%;
-    margin-left: 25%;
-    padding: 25px;
-    background-color: #ffffff;
-    opacity: 80%;
-}
-
 #accessUIDiv
 {
+    margin-top: 6%;
     text-align: center;
     font-size: 25px;
-    width: 50%;
-    margin-left: 25%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
     padding: 25px;
     background-color: #ffffff;
     opacity: 80%;
@@ -211,27 +211,18 @@ input[type="text"],input[type="password"]
     color: #95060a;
 }
 
-/* fix me -- move off main section*/
-/*#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}*/
-
 #logoutButton, #openButton{
     font-size: 25px;
     width: 20%;
-    margin-left: 20%;
     background: #0c9c81;
     padding-bottom: 5px;
     padding-top: 5px;
     border: 0;
 }
 
-.button:hover, .submit-btn:hover {
+.button:hover, .submit-btn:hover{
     background-color: #0c9c81;
-    color: #0c9c81;
+    color: #ffffff;
     opacity: 50%;
 }
 
@@ -249,6 +240,7 @@ select{
 #searchResultTable{
   position: relative;
   display: inline-block;
+  font-size: 16px;
 }
 
 #searchResultTable tr td:nth-child(1), #searchResultTable th:nth-child(1) {
@@ -267,15 +259,10 @@ select{
     color: #95060a;
 }
 
-/* to adjust the alignment of the contact info pop-up*/
-#contactFirst, #contactLast, #contactPhone, #contactEmail
-{
-
-}
-
 #searchSection{
-    height: 600px;
+    height: 50%;
     overflow: scroll;
+    overflow-x:hidden;
 }
 
 /* Add New Contact pop-up form */
@@ -283,6 +270,5 @@ select{
   display: none;
   position: static;
   padding: 25px;
-  z-index: 9;
   background: #ffffff;
 }
