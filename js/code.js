@@ -238,6 +238,7 @@ function searchContact()
 
 				// Create the table element
 				let table = document.createElement("table");
+				table.setAttribute("class", "resultTable");
 
 				// Get the keys (column names) of the first object in the JSON data
 				let cols = [" ", "First Name", "Last Name", "Phone Number", "E-mail Address", " "];
@@ -289,7 +290,6 @@ function searchContact()
 					 table.appendChild(tr); // Append the table row to the table
 				});
          searchResultTable.appendChild(table) // Append the table to the container element
-		 document.getElementById("wanted").style = "display:inline";
 			}
 		};
 		xhr.send(jsonPayload);
