@@ -379,4 +379,6 @@ function editContact()
 		document.getElementById("contactEditResult").innerHTML = err.message;
 	}
 
+	setTimeout(searchContact, 100);
+
 }
