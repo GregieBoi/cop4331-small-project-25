@@ -214,7 +214,6 @@ function searchContact()
 	}
 
 	let srch = document.getElementById("searchQuery").value;
-	document.getElementById("contactSearchResult").innerHTML = "";
 
 	let tmp = {userId:userId, search:srch};
 	let jsonPayload = JSON.stringify( tmp );
@@ -230,7 +229,6 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				let contacts = jsonObject.results;
 				// Get the container element where the table will be inserted
@@ -336,13 +334,13 @@ function deleteContact(contactId)
 function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 {
 
-	popup = document.getElementById("popupFormEdit");
+	document.getElementById("contactEditResult").innerHTML="";
 	
-	document.getElementById("contactEditFirst").setAttribute("name", contactId);
-	document.getElementById("contactEditFirst").setAttribute("value", ogFirst);
-	document.getElementById("contactEditLast").setAttribute("value", ogLast);
-	document.getElementById("contactEditPhone").setAttribute("value", ogPhone);
-	document.getElementById("contactEditEmail").setAttribute("value", ogEmail);
+	document.getElementById("contactEditFirst").name=contactId;
+	document.getElementById("contactEditFirst").value=ogFirst;
+	document.getElementById("contactEditLast").value=ogLast;
+	document.getElementById("contactEditPhone").value=ogPhone;
+	document.getElementById("contactEditEmail").value=ogEmail;
 	const offcanvasElementList = document.querySelectorAll('.offcanvas')
 	const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
 
