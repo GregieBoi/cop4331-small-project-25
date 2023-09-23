@@ -30,7 +30,7 @@ body
 .form-box
 {
     width: 342px;
-    height: 432px;
+    height: 450px;
     position: relative;
     margin: 2% auto;
     background: #FFFFFF;
@@ -150,7 +150,7 @@ body
 /* Extends text boxes on index page */
 #loginName, #loginPassword, #regFirst, #regLast, #regName, #regPassword
 {
-  width: 80%;
+  width: 100%;
 }
 
 #loginDiv
