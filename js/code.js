@@ -264,9 +264,12 @@ function searchContact()
 					 editButton.setAttribute("id", "" + item.contactId + "");
 					 editButton.setAttribute("class", "contactBtn");
 					 editButton.setAttribute("title", "Edit");
+					 editButton.setAttribute("data-bs-toggle", "offcanvas");
+					 editButton.setAttribute("data-bs-target", "#offcanvasTop");
+					 editButton.setAttribute("aria-controls", "offcanvasTop");
 					 editButton.innerHTML = '<i id ="icon" class="fa-solid fa-pen-to-square"></i>';
 					 editButton.onclick = function(){openEdit(item.contactId, item.firstName, item.lastName, item.phone, item.email)};
-
+					 
 					 deleteButton.setAttribute("id", "" + item.contactId + "");
 					 deleteButton.setAttribute("title", "Delete");
 					 deleteButton.setAttribute("class", "contactBtn");
@@ -340,8 +343,8 @@ function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 	document.getElementById("contactEditLast").setAttribute("value", ogLast);
 	document.getElementById("contactEditPhone").setAttribute("value", ogPhone);
 	document.getElementById("contactEditEmail").setAttribute("value", ogEmail);
-
-	popup.style = "display:block";
+	const offcanvasElementList = document.querySelectorAll('.offcanvas')
+	const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
 
 }
 
