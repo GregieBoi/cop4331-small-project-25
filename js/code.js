@@ -61,9 +61,11 @@ function doLogin()
 function doRegister()
 {
 	userId = "";
+	firstName = "";
+	lastName = "";
 
-	let firstName = document.getElementById("regFirst").value;
-	let lastName = document.getElementById("regLast").value;
+	let regFirst = document.getElementById("regFirst").value;
+	let regLast = document.getElementById("regLast").value;
 
 	let login = document.getElementById("regName").value;
 	let password = document.getElementById("regPassword").value;
@@ -71,7 +73,7 @@ function doRegister()
 
 	document.getElementById("registerResult").innerHTML = "";
 
-	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let tmp = {firstName:regFirst,lastName:regLast,login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 
