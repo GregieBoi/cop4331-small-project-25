@@ -88,14 +88,15 @@ function doRegister()
 		{
 			if (this.readyState == 4 && this.status == 500)
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
 
-				if( userId == "" )
+				if( xhr.responseText == "" )
 				{
 					document.getElementById("registerResult").innerHTML = "Username is not available";
 					return;
 				}
+
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
 
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
@@ -157,7 +158,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Howdy, " + firstName + " " + lastName + "!";
+		document.getElementById("userName").innerHTML = "Howdy, " + firstName +"!";
 	}
 
 }
