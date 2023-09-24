@@ -41,7 +41,7 @@
 	<div class="formPopup" id="addContactSection" style="display:block">
 	</br>
 		<h1 style="text-align: center";><strong>Add A Contact</strong></h1></br>
-		<form class="formContainer">
+		<div  class="formContainer">
 			<span id="contactAddResult"></span>
 			<label for="contactFirst">
 				<strong>First Name</strong>
@@ -63,33 +63,26 @@
 			</label>
 			<input type="text" class="input-field" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 			</br>
-			<button type="submit" class="submit-btn" id="contactSubmit" onclick="addContact()">Submit</button>
-		</form>
+			<button type="submit" class="submit-btn" id="contactSubmit" style="width:90%; margin-left:0;" onclick="addContact()">Submit</button>
+		</div>
 			
 	</div>
 	<div id="searchDiv">
 		 <div id="accessUIDiv" style="padding-bottom:0"><img src="images/wanted.png" id="wanted" alt="WANTED"></br>
 			<div class="d-flex justify-content-center" style="display: flex; justify-content: center; align-items: center;">
 				<input type="text" placeholder="Search" id="searchQuery" name="searchQuery" class="input-field" required>
-				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()" style="padding:none; margin:none"><i class="fa-solid fa-magnifying-glass" id="mag-glass" ></i></button>
+				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()" style="padding:none; margin:none; margin-left:0"><i class="fa-solid fa-magnifying-glass" id="mag-glass" ></i></button>
 			</div>
 			</br>
 			<div id="searchSection">
-				<span id="contactSearchResult"></span></br>
-				<span id="contactDeleteResult"></span></br>
 				<span id="searchResultTable"></span>
 			</div>
 		</div>
 	</div>
-	<script>
-		function closeEditForm() {
-			document.getElementById("popupFormEdit").style.display = "none";
-		}
-	</script>
 </div>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-  <div class="offcanvas-header">
-	 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header d-flex justify-content-end">
+	<button type="button" id="close-button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasTop" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div class="formPopup" id="popupFormEdit">
@@ -115,7 +108,7 @@
 		</label>
 		<input type="text" id="contactEditEmail" placeholder="Ex: jsmith@abc.efg" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" class="input-field" required>
 		</br>
-		<button type="submit" class="submit-btn" id="contactEditSubmit" onclick="editContact()">Submit</button>
+		<button type="submit" class="submit-btn" style="width:90%; margin-left:0;" id="contactEditSubmit" onclick="editContact()">Submit</button>
 	</div>
   </div>
 </div>
