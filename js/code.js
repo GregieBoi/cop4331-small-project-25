@@ -394,3 +394,31 @@ function delModal(contactId, firstName, lastName, button){
 		document.getElementById("exampleModalLabel").innerText = "Are you sure you want to delete " + firstName + " " + lastName + "?";
 	}
 }
+
+function deleteUser()
+{
+
+	let tmp = {userId:userId};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/DeleteUser.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				doLogout();
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+	}
+
+}
