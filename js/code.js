@@ -343,8 +343,6 @@ function openEdit(contactId, ogFirst, ogLast, ogPhone, ogEmail)
 	document.getElementById("contactEditLast").value=ogLast;
 	document.getElementById("contactEditPhone").value=ogPhone;
 	document.getElementById("contactEditEmail").value=ogEmail;
-	const offcanvasElementList = document.querySelectorAll('.offcanvas')
-	const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
 
 }
 
