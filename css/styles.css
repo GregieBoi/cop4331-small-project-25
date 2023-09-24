@@ -219,7 +219,7 @@ input[type="text"],input[type="password"],{
 
 #loginResult{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 20;
     width: 90%;
     text-align: center;
     margin-left: 5%;
