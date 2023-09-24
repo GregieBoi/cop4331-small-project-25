@@ -274,7 +274,9 @@ function searchContact()
 					 deleteButton.setAttribute("title", "Delete");
 					 deleteButton.setAttribute("class", "contactBtn");
 					 deleteButton.innerHTML = '<i id="icon" class="fa-solid fa-trash"></i>';
-					 deleteButton.onclick = function(){deleteContact(item.contactId), deleteButton.closest("tr").remove();};
+					 deleteButton.setAttribute("data-bs-toggle", "modal");
+					 deleteButton.setAttribute("data-bs-target", "#delete-modal");
+					 deleteButton.onclick = function(){delModal(item.contactId, item.firstName, item.lastName, deleteButton)};
 					 
 					 let tr = document.createElement("tr");
 
@@ -321,14 +323,14 @@ function deleteContact(contactId)
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
+				//document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("contactDeleteResult").innerHTML = err.message;
+		//document.getElementById("contactDeleteResult").innerHTML = err.message;
 	}
 
 }
@@ -381,4 +383,14 @@ function editContact()
 
 	setTimeout(searchContact, 100);
 
+}
+
+function delModal(contactId, firstName, lastName, button){
+	const exampleModal = document.getElementById('delete-modal')
+	if (exampleModal) {
+		exampleModal.show;
+		// Update the modal's content.
+		document.getElementById("del-modal-btn").onclick = function(){deleteContact(contactId), button.closest("tr").remove()};
+		document.getElementById("exampleModalLabel").innerText = "Are you sure you want to delete " + firstName + " " + lastName + "?";
+	}
 }
