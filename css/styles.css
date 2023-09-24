@@ -79,7 +79,7 @@ body
 
 .input-field
 {
-    font-size: 25px;
+    font-size: 18px;
     width: 90%;
     padding: 10px 0;
     margin: 5px 0;
@@ -141,11 +141,13 @@ body
 /* Placement of sliding login<->register boxes on index page */
 #login
 {
-    left: 40px
+    left: 40px;
+    margin-top: 5%;
 }
 #register
 {
-    left: 360px
+    left: 360px;
+    margin-top: 5%;
 }
 
 /* Extends text boxes on index page */
@@ -221,20 +223,22 @@ input[type="text"],input[type="password"],{
     width: 90%;
     text-align: center;
     margin-left: 5%;
+    margin-top: 5%;
     margin-bottom: 2%;
     font-family: 'Georgia', serif;
-    color: #95060a;
+    color: black;
 }
 
 #registerResult{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 20;
     width: 90%;
     text-align: center;
     margin-left: 5%;
+    margin-top: 5%;
     margin-bottom: 2%;
     font-family: 'Georgia', serif;
-    color: #95060a;
+    color: black;
 }
 
 #logoutButton, #openButton{
