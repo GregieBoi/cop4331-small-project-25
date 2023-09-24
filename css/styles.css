@@ -338,3 +338,33 @@ select{
 #icon{
     font-size: 1.25em;
 }
+
+.about-box
+{
+
+    width: 76%;
+    height: 60%;
+    margin: 2% 10%;
+    padding: 2%;
+    background: #ffffff;
+    position: static;
+    opacity: 90%;
+
+}
+
+.left-group
+{
+
+    width: 50%;;
+    height: 60%;
+    float: left;
+
+}
+
+.right-group
+{
+
+    margin-left: 50%;
+    height: 60%;
+
+}
