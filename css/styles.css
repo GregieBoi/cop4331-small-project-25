@@ -116,8 +116,9 @@ body
 
 .submit-btn
 {
-    width: 85%;
+    width: 80%;
     padding: 10px 30px;
+    margin-left:10%;
     cursor: pointer;
     display: block;
     background: #00AD2A;
@@ -129,12 +130,6 @@ body
 {
     color: #000;
     font-size: 25px;
-}
-
-/* changes sizes of submit buttons on contact page */
-#contactSubmit, #contactClose
-{
-  width: 20%;
 }
 
 #searchSubmit.submit-btn{
