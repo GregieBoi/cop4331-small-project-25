@@ -70,8 +70,18 @@
 				z.style.left = "0";
 			}
 			function darkMode(){
-				var element = document.body;
-				element.classList.toggle("dark-mode");
+				
+				theme = document.getElementById("theme");
+				
+				if(theme.getAttribute("href") == "styles.css") 
+				{
+					theme.href = "dark.css";
+				}
+				else
+				{
+					theme.href = "styles.css";
+				}
+			
 			}
 		</script>
 	</body>
