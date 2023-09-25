@@ -203,6 +203,23 @@ body
         color: white;
         font-size: 1.25em;
     }
+
+    .bg-light {
+        --bs-bg-opacity: 1;
+        background-color: rgb(72, 75, 70) !important;
+    }
+
+    #offcanvasTop {
+        background-color: rgb(72, 75, 70);
+    }
+
+    #offcanvasEnd {
+        background-color: rgb(72, 75, 70);
+    }
+
+    .modal-content {
+        background-color: rgb(72, 75, 70);
+    }
 }
 
 #title
