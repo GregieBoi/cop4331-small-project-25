@@ -220,6 +220,12 @@ body
     .modal-content {
         background-color: rgb(72, 75, 70);
     }
+
+    #userName
+    {
+        color: white;
+        font-size: 25px;
+    }
 }
 
 #title
