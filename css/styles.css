@@ -8,6 +8,11 @@ body
     overflow: hidden;
 }
 
+*
+{
+    font-family: "Georgia", serif;
+}
+
 .dark-mode {
     background-color: #707070;
     background-image: url('../images/cowboyInterior.jpg');
@@ -35,6 +40,26 @@ body
         margin: 35px auto;
         position: relative;
         box-shadow: 0 0 20px 9px #ffffff1f;
+    }
+
+    #title img
+    {
+        content: url('../images/cowboydark.png');
+    }
+
+    #rl img
+    {
+        content: url('../images/revolverdarkleft.png');
+    }
+    
+    #wanted img
+    {
+        content: url('../images/wanteddark.png');
+    }
+    
+    #rr img
+    {
+        content: url('../images/revolverdarkright.png');
     }
 
     .input-group
@@ -92,9 +117,9 @@ body
         position: static;
         padding: 25px;
         background: rgb(72, 75, 70);
-    }
+      }
 
-    #loginResult{
+      #loginResult{
         display: inline-block;
         font-size: 20;
         width: 90%;
@@ -105,7 +130,7 @@ body
         font-family: 'Georgia', serif;
         color: rgb(255, 255, 255);
     }
-    
+
     #registerResult{
         display: inline-block;
         font-size: 20;
@@ -168,11 +193,6 @@ body
         opacity: 95%;
     }
 
-}
-
-*
-{
-    font-family: "Georgia", serif;
 }
 
 #title
@@ -403,13 +423,22 @@ input[type="text"],input[type="password"],{
     color: black;
 }
 
-#logoutButton, #openButton{
+#logoutButton{
     font-size: 25px;
-    width: 20%;
+    width: 100%;
     background: #00AD2A;
     padding-bottom: 5px;
     padding-top: 5px;
     border: 0;
+}
+
+a{
+    color:#999;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #707070;
 }
 
 .button:hover, .submit-btn:hover{
@@ -451,8 +480,6 @@ select{
     font-family: 'Georgia', serif;
 }
 
-#contactSearchResult{
-}
 
 #searchResultTable{
   position: relative;
@@ -537,4 +564,59 @@ select{
     margin-left: 50%;
     height: 60%;
 
+}
+
+/*styling for dark mode slider*/
+.toggle-container {
+    text-align: center;
+    display: table;
+    width: 100%;
+}
+
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin: 0 auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    content: "";
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    left: 4px;
+    bottom: 4px;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
