@@ -8,6 +8,109 @@ body
     overflow: hidden;
 }
 
+.dark-mode {
+    background-color: #707070;
+    background-image: url('../images/cowboyInterior.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+
+    color: white;
+
+    .form-box {
+        width: 342px;
+        height: 450px;
+        position: relative;
+        margin: 2% auto;
+        background: rgb(72, 75, 70);
+        padding: 5px;
+        opacity: 90%;
+        overflow: hidden;
+    }
+
+    .input-field
+    {
+        font-size: 18px;
+        width: 90%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: rgb(72, 75, 70);
+        opacity: 100%;
+    }
+
+    .btn-box
+    {
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px #ffffff1f;
+    }
+
+    .input-group
+    {
+        color: white;
+        font-size: 15px;
+        top: 75px;
+        position: absolute;
+        width: 75%;
+        transition: .5s;
+    }
+
+    .toggle-btn
+    {
+        color: white;
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+
+    .input-field
+    {
+        color: white;
+        font-size: 18px;
+        width: 90%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 1px solid #ffffff;
+        outline: none;
+        background: rgb(72, 75, 70);
+        opacity: 90%;
+    }
+
+    .submit-btn
+    {
+        color: white;
+        width: 80%;
+        padding: 10px 30px;
+        margin-left:10%;
+        cursor: pointer;
+        display: block;
+        background: #00AD2A;
+        border: 0;
+        outline: none;
+    }
+
+    .formPopup {
+        color: white;
+        position: static;
+        padding: 25px;
+        background: rgb(72, 75, 70);
+      }
+
+}
+
 *
 {
     font-family: "Georgia", serif;
