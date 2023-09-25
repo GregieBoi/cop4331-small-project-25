@@ -413,7 +413,7 @@ body
     opacity: 95%;
 }
 
-input[type="text"],input[type="password"],{
+input[type="text"],input[type="password"]{
     text-align: left;
     width: 50%;
     margin-left: 10%;
