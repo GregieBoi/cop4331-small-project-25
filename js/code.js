@@ -436,14 +436,3 @@ function deleteUser()
 	}
 
 }
-
-function delUserModal()
-{
-	const exampleModal = document.getElementById('delete-modal')
-	if (exampleModal) {
-		exampleModal.show;
-		// Update the modal's content.
-		document.getElementById("del-modal-btn").onclick = function(){deleteUser(userId)};
-		document.getElementById("exampleModalLabel").innerText = "Are you sure you want to delete your account" + firstName + " " + lastName + "?";
-	}
-}
