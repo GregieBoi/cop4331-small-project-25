@@ -131,6 +131,7 @@ function saveCookie()
 	document.cookie = "firstName=" + firstName;
 	document.cookie = "lastName=" + lastName;
 	document.cookie = "userId=" + userId;
+	document.cookie = "dark=0";
 
 }
 
@@ -154,6 +155,10 @@ function readCookie()
 		else if( tokens[0] == "userId" )
 		{
 			userId = parseInt( tokens[1].trim() );
+		}
+		else if ( tokens[0] == "dark")
+		{
+			userId = tokens[1];
 		}
 	}
 
