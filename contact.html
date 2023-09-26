@@ -15,8 +15,6 @@
 	document.addEventListener('DOMContentLoaded', function()
 	{
 		readCookie();
-		darkMode();
-
 	}, false);
 	</script>
 	<script>
@@ -24,16 +22,14 @@
 			
 			theme = document.getElementById("theme");
 			
-			
-			if(theme.getAttribute("href") == "css/styles.css" || dark == 1) 
+			if(theme.getAttribute("href") == "css/styles.css") 
 			{
 				theme.href = "css/dark.css";
-				dark = 1;
+				document.getElementById("darkModeButton").innerText = "Light Mode";
 			}
 			else
 			{
 				theme.href = "css/styles.css";
-				dark = 0;
 			}
 
 		}
