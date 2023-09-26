@@ -33,16 +33,17 @@
 
 		}
 	</script>
-	<button onclick="darkMode()">DarkMode</button>
 </head>
 <body>
 	<nav class="navbar navbar-light bg-light px-5" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); z-index:2">
 		<div class="container-fluid">
-		  <span style="font-size: 22px; width: 100%"><img src="images/cowboy.png" alt="Cowboy Contacts" style="height: 1.5em" id="cowboyContacts"></span>
-			<strong><span id="userName"></span></strong>
-			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
+		  <span style="font-size: 22px;"><img src="images/cowboy.png" alt="Cowboy Contacts" style="height: 1.5em" id="cowboyContacts"></span>
+			<div>
+		  		<strong><span id="userName"></span></strong>
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
 		</div>
 	  </nav>
 <div id="mainSection">
@@ -126,10 +127,12 @@
 	</div>
 	<div class="offcanvas-body">
 		<button type="button" id="logoutButton" class="button" onclick="doLogout();" style="display:inline"> Log Out </button>
-		</br>
+		</br><p></p>
 		<a href="about.html" style="font-size: 25px;" style="text-align: center;"><Strong> About Us </Strong></a>
 		</br>
-		<button type="button" id="delUserButton" class="btn btn-outline-success" onclick="delUserModal()" style="position: absolute; bottom: 0;"> Delete User </button></br>
+		<button onclick="darkMode()">Dark Mode</button>
+	</br>
+		<button type="button" id="delUserButton" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#user-modal" style="position:absolute; bottom:0; margin-bottom: 5%; width:92%"> Delete Account </button></br>
 	</div>
 </div>
 <div class="modal fade" id="delete-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -145,6 +148,21 @@
 		</div>
 	  </div>
 	</div>
-  </div>
+</div>
+<div class="modal fade" id="user-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="userModalLabel">Are you sure you want to delete your account?</br>
+		<strong>This cannot be undone.</strong></h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-outline-danger" id="user-modal-btn" data-bs-dismiss="modal" aria-label="Close" onclick="deleteUser()">Delete</button>
+		</div>
+	  </div>
+	</div>
+</div>
 </body>
 </html>
