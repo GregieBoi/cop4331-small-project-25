@@ -198,14 +198,6 @@ body
     opacity: 95%;
 }
 
-input[type="text"],input[type="password"]{
-    text-align: left;
-    width: 50%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Georgia', serif;
-}
-
 #inner-title{
     display: inline-block;
     font-size: 0.8em;
@@ -285,6 +277,12 @@ th
 {
     border-bottom: 1px solid #ddd;
 }
+
+tr
+{
+    border-bottom: 1px solid #ddd;
+}
+
 
 tr:hover {background-color: lightgrey;}
 

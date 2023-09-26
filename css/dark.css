@@ -1,6 +1,5 @@
 body
 {
-
     background-color: #707070;
     background-image: url('../images/cowboyInterior.jpg');
     background-repeat: no-repeat;
@@ -314,14 +313,6 @@ tr:hover {background-color: rgb(72, 75, 70);}
     float:right;
 }
 
-input[type="text"],input[type="password"]{
-    text-align: left;
-    width: 50%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Georgia', serif;
-}
-
 #inner-title{
     display: inline-block;
     font-size: 0.8em;
@@ -374,6 +365,11 @@ table.resultTable tr td {
 }
 
 th
+{
+    border-bottom: 1px solid #ddd;
+}
+
+tr
 {
     border-bottom: 1px solid #ddd;
 }
