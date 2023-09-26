@@ -242,6 +242,38 @@ body
     border: 0;
 }
 
+#darkModeButton{
+    font-size: 25px;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    outline: 1px, #00AD2A;
+}
+
+#darkModeButton:hover{
+    background-color: #484b46;
+    color:#fff;
+    outline: 0;
+    opacity:100%;
+}
+
+#delUserButton{
+    font-size: 25px;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    outline: 2px, solid #00AD2A;
+}
+
+#delUserButton:hover{
+    background-color: #00AD2A;
+    color:#fff;
+    outline: 0;
+    opacity:50%;
+}
+
 a{
     color:#999;
     text-decoration: none;

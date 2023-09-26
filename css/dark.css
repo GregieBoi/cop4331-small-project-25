@@ -333,6 +333,39 @@ tr:hover {background-color: rgb(72, 75, 70);}
     border: 0;
 }
 
+#darkModeButton{
+    font-size: 25px;
+    width: 100%;
+    background: #00AD2A;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border:0;
+}
+
+#darkModeButton:hover{
+    background-color: #fff;
+    color:#000;
+    outline: 0;
+    opacity:50%;
+}
+
+#delUserButton{
+    font-size: 25px;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    outline: 2px, solid #00AD2A;
+}
+
+#delUserButton:hover{
+    background-color: #00AD2A;
+    color:#fff;
+    outline: 0;
+    opacity:50%;
+}
+
+
 a{
     color:#999;
     text-decoration: none;
