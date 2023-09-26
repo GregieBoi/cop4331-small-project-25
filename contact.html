@@ -38,7 +38,7 @@
 <body>
 	<nav class="navbar navbar-light bg-light px-5" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); z-index:2">
 		<div class="container-fluid">
-		  <span style="font-size: 22px; width: 100%"><img src="images/cowboy.png" alt="Cowboy Contacts" style="height: 1.5em"></span>
+		  <span style="font-size: 22px; width: 100%"><img src="images/cowboy.png" alt="Cowboy Contacts" style="height: 1.5em" id="cowboyContacts"></span>
 			<strong><span id="userName"></span></strong>
 			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEnd" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
@@ -76,7 +76,7 @@
 			
 	</div>
 	<div id="searchDiv">
-		 <div id="accessUIDiv" style="padding-bottom:0"><img src="images/revolverleft.png" style="size=1em" alt="revolver"><img src="images/wanted.png" id="wanted" alt="WANTED"><img src="images/revolverright.png" style="size=1em" alt="revolver"></br>
+		 <div id="accessUIDiv" style="padding-bottom:0"><img src="images/revolverleft.png" style="size=1em" alt="revolver" id="rl"><img src="images/wanted.png" id="wanted" alt="WANTED"><img src="images/revolverright.png" style="size=1em" alt="revolver" id="rr"></br>
 			<div class="d-flex justify-content-center" style="display: flex; justify-content: center; align-items: center;">
 				<input type="text" placeholder="Search" id="searchQuery" name="searchQuery" class="input-field" required>
 				<button type="submit" class="submit-btn" id="searchSubmit" onclick="searchContact()" style="padding:none; margin:none; margin-left:0"><i class="fa-solid fa-magnifying-glass" id="mag-glass" ></i></button>

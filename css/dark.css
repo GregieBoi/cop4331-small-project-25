@@ -41,17 +41,22 @@ body
     content: url('../images/cowboydark.png');
 }
 
-#rl img
+#cowboyContacts
+{
+    content: url('../images/cowboydark.png');
+}
+
+#rl
 {
     content: url('../images/revolverdarkleft.png');
 }
 
-#wanted img
+#wanted
 {
     content: url('../images/wanteddark.png');
 }
 
-#rr img
+#rr
 {
     content: url('../images/revolverdarkright.png');
 }
