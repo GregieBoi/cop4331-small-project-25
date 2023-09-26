@@ -73,6 +73,11 @@ function doRegister()
 
 	document.getElementById("registerResult").innerHTML = "";
 
+	if (firstName == "" || lastName == "" || login == "" || password == "") 
+	{
+		return;
+	}
+
 	let tmp = {firstName:regFirst,lastName:regLast,login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
@@ -181,6 +186,12 @@ function addContact()
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
+	if (newContactFirst == "" || newContactLast == "")
+	{
+		document.getElementById("contactAddResult").innerHTML = "Contact must have first and last name";
+		return;
+	}
+
 	let tmp = {firstName:newContactFirst,lastName:newContactLast,phone:newContactPhone,email:newContactEmail,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -204,6 +215,8 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
+
+	setTimeout(searchContact, 100);
 
 }
 
