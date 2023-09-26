@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let dark = 0;
 
 function doLogin()
 {
@@ -13,12 +14,12 @@ function doLogin()
 
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-//	var hash = md5( password );
+  var hash = md5( password );
 
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+//	let tmp = {login:login,password:password};
+	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Login.' + extension;
@@ -58,6 +59,41 @@ function doLogin()
 
 }
 
+function darkMode(){
+			
+			theme = document.getElementById("theme");
+      
+      let minutes = 20;
+      let darkDate = new Date();
+      darkDate.setTime(darkDate.getTime()+(365*24*minutes*3*60*1000));
+			
+			
+			if(theme.getAttribute("href") == "css/styles.css") 
+			{
+				theme.href = "css/dark.css";
+				document.cookie = "dark=1;expires=" + darkDate.toGMTString();
+        document.getElementById("darkModeButton").innerText = "Light Mode";
+			}
+			else
+			{
+				theme.href = "css/styles.css";
+        document.cookie = "dark=0;expires=" + darkDate.toGMTString();
+        document.getElementById("darkModeButton").innerText = "Dark Mode";
+			}
+
+		}
+   
+function load(){
+    
+      if(dark == 1) 
+      {
+        theme = document.getElementById("theme");
+        theme.href = "css/dark.css";
+        document.getElementById("darkModeButton").innerText = "Light Mode";
+      }
+    
+    }
+
 function doRegister()
 {
 	userId = "";
@@ -69,17 +105,18 @@ function doRegister()
 
 	let login = document.getElementById("regName").value;
 	let password = document.getElementById("regPassword").value;
-//	var hash = md5( password );
+	var hash = md5( password );
 
 	document.getElementById("registerResult").innerHTML = "";
 
-	if (firstName == "" || lastName == "" || login == "" || password == "") 
+	if (regFirst == "" || regLast == "" || login == "" || password == "") 
 	{
-		return;
+		document.getElementById("registerResult").innerHTML = "All Fields Required";
+    return;
 	}
 
-	let tmp = {firstName:regFirst,lastName:regLast,login:login,password:password};
-//	var tmp = {login:login,password:hash};
+//	let tmp = {firstName:regFirst,lastName:regLast,login:login,password:password};
+	let tmp = {firstName:regFirst,lastName:regLast,login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/Register.' + extension;
@@ -121,17 +158,19 @@ function doRegister()
 
 function saveCookie()
 {
-	/*
+
 	let minutes = 20;
 	let date = new Date();
+  let darkDate = date;
 	date.setTime(date.getTime()+(minutes*60*1000));
-	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
-	*/
+  darkDate.setTime(date.getTime()+(365*24*minutes*3*60*1000));
+ 
 
-	document.cookie = "firstName=" + firstName;
-	document.cookie = "lastName=" + lastName;
-	document.cookie = "userId=" + userId;
-	document.cookie = "dark=0";
+	document.cookie = "firstName=" + firstName + ";expires=" + date.toGMTString();
+	document.cookie = "lastName=" + lastName + ";expires=" + date.toGMTString();
+	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString();
+  
+  if (dark == 0) document.cookie = "dark=0;expires=" + darkDate.toGMTString();
 
 }
 
@@ -158,7 +197,7 @@ function readCookie()
 		}
 		else if ( tokens[0] == "dark")
 		{
-			userId = tokens[1];
+			dark = tokens[1];
 		}
 	}
 
@@ -169,6 +208,23 @@ function readCookie()
 	else
 	{
 		document.getElementById("userName").innerHTML = "Howdy, " + firstName +"!";
+	}
+
+}
+
+function readDark()
+{
+	userId = -1;
+	let data = document.cookie;
+	let splits = data.split(";");
+	for(var i = 0; i < splits.length; i++)
+	{
+		let thisOne = splits[i].trim();
+		let tokens = thisOne.split("=");
+		if ( tokens[0] == "dark")
+		{
+			dark = tokens[1];
+		}
 	}
 
 }
