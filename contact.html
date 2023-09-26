@@ -54,22 +54,22 @@
 			<span id="contactAddResult"></span>
 			<label for="contactFirst">
 				<strong>First Name</strong>
-			</label>
+			</label></br>
 			<input type="text" class="input-field" id="contactFirst" placeholder="Ex: John" name="contactFirst" required>
 			</br>
 			<label for="contactLast">
 				<strong>Last Name</strong>
-			</label>
+			</label></br>
 			<input type="text" class="input-field" id="contactLast" placeholder="Ex: Smith" name="contactLast" required>
 			</br>
 			<label for="contactPhone">
 				<strong>Phone Number</strong>
-			</label>
+			</label></br>
 			<input type="text" class="input-field" id="contactPhone" placeholder="(XXX)-XXX-XXXX" name="contactPhone" pattern="\([0-9]{3}\)-[0-9]{3}-[0-9]{4}" required>
 			</br>
 			<label for="contactEmail">
 				<strong>E-mail Address</strong>
-			</label>
+			</label></br>
 			<input type="text" class="input-field" id="contactEmail" placeholder="Ex: jsmith@abc.efg" name="contactEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
 			</br>
 			<button type="submit" class="submit-btn" id="contactSubmit" style="width:90%; margin-left:0;" onclick="addContact()">Submit</button>
@@ -130,7 +130,7 @@
 		</br><p></p>
 		<a href="about.html" style="font-size: 25px;" style="text-align: center;"><Strong> About Us </Strong></a>
 		</br>
-		<button onclick="darkMode()">Dark Mode</button>
+		<button type="button" class="button" id="darkModeButton" onclick="darkMode()">Dark Mode</button>
 	</br>
 		<button type="button" id="delUserButton" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#user-modal" style="position:absolute; bottom:0; margin-bottom: 5%; width:92%"> Delete Account </button></br>
 	</div>
@@ -154,7 +154,7 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h1 class="modal-title fs-5" id="userModalLabel">Are you sure you want to delete your account?</br>
-		<strong>This cannot be undone.</strong></h1>
+		  <strong>This cannot be undone.</strong></h1>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-footer">
